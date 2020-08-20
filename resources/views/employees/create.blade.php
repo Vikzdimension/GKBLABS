@@ -43,6 +43,13 @@
 	        </div>
 
 	        <div class="col-xs-12 col-sm-12 col-md-12">
+	            <div class="form-group">
+	                <strong>Email:</strong>
+	                <input type="text" name="email" class="form-control" placeholder="Email" required>
+	            </div>
+	        </div>
+
+	        <div class="col-xs-12 col-sm-12 col-md-12">
 		        <div class="row">
 					<div class="col">
 						<div class="form-check">
@@ -84,6 +91,14 @@
 							<input class="form-check-input" type="radio" name="gender" id="female" value="female">
 								<label class="form-check-label" for="female">
 									Female
+								</label>
+						</div>
+					</div>
+					<div class="col">
+						<div>
+							<input class="form-check-input" type="radio" name="gender" id="mix" value="mix">
+								<label class="form-check-label" for="mix">
+									Other
 								</label>
 						</div>
 					</div>

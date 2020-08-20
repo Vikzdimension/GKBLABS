@@ -4,6 +4,9 @@ namespace GKBLAB\Http\Controllers;
 
 use GKBLAB\Employee;
 use Illuminate\Http\Request;
+use GKBLAB\Exports\EmployeesExport;
+use GKBLAB\Imports\EmployeesImport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EmployeeController extends Controller
 {
@@ -38,8 +41,9 @@ class EmployeeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'name' => 'required',
-            'detail' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
         ]);
         Employee::create($request->all());
         return redirect()->route('employees.index')
@@ -103,12 +107,12 @@ class EmployeeController extends Controller
 
     public function import()
     {
-        Excel::import(new StudentsImport,request()->file('file'));
+        Excel::import(new EmployeesImport,request()->file('file'));
         return back();
     }
 
     public function export()
     {
-        return Excel::download(new StudentsExport, 'students.csv');
+        return Excel::download(new EmployeesExport, 'employees.csv');
     }
 }

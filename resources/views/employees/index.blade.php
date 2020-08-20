@@ -23,8 +23,8 @@
 	            @csrf
 	            <input type="file" name="file" required class="form-control" accept=".csv,.xlsx" multiple>
 	            <br>
-	            <div><button class="btn btn-primary btn-sm">Import Student Data</button>
-	            <a class="btn btn-secondary btn-sm" href="{{ route('export') }}">Export Student Data</a>
+	            <div><button class="btn btn-primary btn-sm">Import Employee Data</button>
+	            <a class="btn btn-secondary btn-sm" href="{{ route('export') }}">Export Employee Data</a>
 	            </div>
 	        </form>
 	    </div>
