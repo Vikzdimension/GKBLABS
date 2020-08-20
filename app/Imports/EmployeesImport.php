@@ -12,8 +12,10 @@ class EmployeesImport implements ToModel
     *
     * @return \Illuminate\Database\Eloquent\Model|null
     */
+    private $rows = 0;
     public function model(array $row)
     {
+        ++$this->rows;
         $employee = Employee::updateOrCreate([
             'first_name' => $row[1],
             'last_name' => $row[2], 
@@ -23,5 +25,10 @@ class EmployeesImport implements ToModel
             'picture' => $row[6],
         ]);
         return $employee;
+    }
+
+    public function getRowCount(): int
+    {
+        return $this->rows;
     }
 }

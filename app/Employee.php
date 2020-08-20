@@ -19,4 +19,19 @@ class Employee extends Model
     protected $fillable = [
         'first_name', 'last_name', 'email', 'hobbies', 'gender', 'picture'
     ];
+
+    protected $casts = [
+        'hobbies' => 'array',
+    ];
+    
+    // public function setHobbiesAttribute($value)
+    // {
+    //     return json_encode($value);
+    // }
+
+    // public function getHobbiesAttribute($value)
+    // {
+    //     return json_decode($value, true);
+    // }
+
 }

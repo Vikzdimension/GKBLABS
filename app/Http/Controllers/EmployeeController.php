@@ -40,11 +40,15 @@ class EmployeeController extends Controller
      */
     public function store(Request $request)
     {
+        // $myCheckboxes = $request->input('hobbies');
+        // dd($myCheckboxes);
         $request->validate([
             'first_name' => 'required',
             'last_name' => 'required',
             'email' => 'required',
         ]);
+        // dd($request->hobbies);
+        $request->hobbies = collect($request->hobbies)->implode(',');
         Employee::create($request->all());
         return redirect()->route('employees.index')
                         ->with('success','Employee created successfully.');
@@ -69,6 +73,8 @@ class EmployeeController extends Controller
      */
     public function edit(Employee $employee)
     {
+        // dd($employee->hobbies);
+        $employee->hobbies = collect($employee->hobbies)->implode(',');
         return view('employees.edit',compact('employee'));
     }
 
@@ -82,13 +88,14 @@ class EmployeeController extends Controller
     public function update(Request $request, Employee $employee)
     {
         $request->validate([
-            'firstname' => 'required',
-            'lastname' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email' => 'required',
         ]);
 
-        $product->update($request->all());
-        return redirect()->route('products.index')
-                        ->with('success','Product updated successfully');
+        $employee->update($request->all());
+        return redirect()->route('employees.index')
+                        ->with('success','Employee updated successfully');
     }
 
     /**
@@ -108,7 +115,8 @@ class EmployeeController extends Controller
     public function import()
     {
         Excel::import(new EmployeesImport,request()->file('file'));
-        return back();
+        return redirect()->route('employees.index')
+                        ->with('success','Employee Imported successfully');
     }
 
     public function export()

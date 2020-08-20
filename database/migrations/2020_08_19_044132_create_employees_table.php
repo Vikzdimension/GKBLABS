@@ -22,7 +22,7 @@ class CreateEmployeesTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('email')->unique();
-            $table->string('hobbies')->nullable();
+            $table->text('hobbies')->nullable();
             $table->string('gender');
             $table->string('picture')->nullable();
             $table->timestamps();

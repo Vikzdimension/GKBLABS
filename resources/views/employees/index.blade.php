@@ -47,7 +47,7 @@
 			<td>{{ $employee->first_name }}</td>
 			<td>{{ $employee->last_name }}</td>
 			<td>{{ $employee->email }}</td>
-			<td>{{ $employee->hobbies }}</td>
+		    <td>{{json_encode($employee->hobbies,TRUE)}}</td>
 			<td>{{ $employee->gender }}</td>
             <!-- <td><img src="{{ $employee->Picture }}" alt="" border=3 height=30 width=30></img></tr> -->
            	<td>{{ $employee->picture }}</td>
@@ -56,7 +56,6 @@
            			<a class="btn btn-sm btn-primary" href="{{ route('employees.edit', $employee->id) }}">EDIT</a>
            			@method('DELETE')
            			@csrf
-           			<!-- <button type="submit" class="btn btn-sm btn-danger">DELETE</button> -->
            			<!-- Button trigger modal -->
 					<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
 					  DELETE
