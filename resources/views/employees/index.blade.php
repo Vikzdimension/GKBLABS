@@ -38,7 +38,7 @@
 			<th>Hobbies</th>
 			<th>Gender</th>
 			<th>Picture</th>
-			<th>Action</th>
+			<th style="" >Action</th>
 		</tr>
 		@foreach($employees as $employee)
 		<tr>
@@ -48,7 +48,7 @@
 			<td>{{ $employee->email }}</td>
 			<td>{{ $employee->hobbies }}</td>
 			<td>{{ $employee->gender }}</td>
-            <!-- <td><img src="{{ $employee->Picture }}" alt="" border=3 height=100 width=100></img></tr> -->
+            <!-- <td><img src="{{ $employee->Picture }}" alt="" border=3 height=30 width=30></img></tr> -->
            	<td>{{ $employee->picture }}</td>
            	<td>
            		<form action="{{ route('employees.destroy', $employee->id) }}" method="POST">

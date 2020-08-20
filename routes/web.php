@@ -23,6 +23,6 @@ Route::get('/home', 'EmployeeController@index')->name('home');
 
 Route::get('export', 'EmployeeController@export')->name('export');
 
-Route::get('import', 'EmployeeController@import')->name('import');
+Route::post('import', 'EmployeeController@import')->name('import');
 
 
