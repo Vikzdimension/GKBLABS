@@ -53,25 +53,25 @@
 		        <div class="row">
 					<div class="col">
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="tv" id="tv">
+							<input class="form-check-input" name="hobbies" type="checkbox" value="tv" id="tv">
 						  		<label class="form-check-label" for="tv">
 						    		TV
 						  		</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="reading" id="reading">
+							<input class="form-check-input" name="hobbies" type="checkbox" value="reading" id="reading">
 								<label class="form-check-label" for="reading">
 									Reading
 								</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="coding" id="coding">
+							<input class="form-check-input" name="hobbies" type="checkbox" value="coding" id="coding">
 								<label class="form-check-label" for="coding">
 									Coding
 								</label>
 						</div>
 						<div class="form-check">
-							<input class="form-check-input" type="checkbox" value="skiing" id="skiing">
+							<input class="form-check-input" name="hobbies" type="checkbox" value="skiing" id="skiing">
 								<label class="form-check-label" for="skiing">
 									Skiing
 								</label>
@@ -80,7 +80,7 @@
 					
 					<div class="col">
 						<div>
-							<input class="form-check-input" type="radio" name="gender" id="male" value="gender" checked>
+							<input class="form-check-input" type="radio" name="gender" id="male" value="male" checked>
 								<label class="form-check-label" for="male">
 									Male
 								</label>
