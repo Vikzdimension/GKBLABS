@@ -60,5 +60,9 @@
            	</td>
 		@endforeach
 	</table>
+{{ $employees->links() }}
+<p>
+    Displaying {{$employees->count()}} of {{ $employees->total() }} employee(s).
+</p>
 </div>
 @endsection
