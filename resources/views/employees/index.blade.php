@@ -20,7 +20,8 @@
 	        <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
 	            <span class="badge badge-info">Sample .CSV</span>
 	            <br>
-	            @csrf
+	           	@method('POST')
+				@csrf
 	            <input type="file" name="file" required class="form-control" accept=".csv,.xlsx" multiple>
 	            <br>
 	            <div><button class="btn btn-primary btn-sm">Import Employee Data</button>
@@ -55,8 +56,34 @@
            			<a class="btn btn-sm btn-primary" href="{{ route('employees.edit', $employee->id) }}">EDIT</a>
            			@method('DELETE')
            			@csrf
-           			<button type="submit" class="btn btn-sm btn-danger">DELETE</button>
+           			<!-- <button type="submit" class="btn btn-sm btn-danger">DELETE</button> -->
+           			<!-- Button trigger modal -->
+					<button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#exampleModal">
+					  DELETE
+					</button>
+
+					<!-- Modal -->
+					<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+					  	<div class="modal-dialog" role="document">
+					    	<div class="modal-content">
+					      		<div class="modal-header">
+							        <h5 class="modal-title" id="exampleModalLabel">DELETE EMPLOYEE</h5>
+							        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							          	<span aria-hidden="true">&times;</span>
+							        </button>
+					      		</div>
+								<div class="modal-body">
+									Are you sure you want to delete your employee?
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-secondary" data-dismiss="modal">CLOSE</button>
+									<button type="submit" class="btn btn-primary">DELETE</button>
+								</div>
+					    	</div>
+					  	</div>
+					</div>
            		</form>
+
            	</td>
 		@endforeach
 	</table>

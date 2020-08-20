@@ -17,12 +17,12 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('employees', 'EmployeeController');
+Route::resource('employees', 'EmployeeController')->middleware('auth');
 
 Route::get('/home', 'EmployeeController@index')->name('home');
 
-Route::get('export', 'EmployeeController@export')->name('export');
+Route::get('export', 'EmployeeController@export')->name('export')->middleware('auth');
 
-Route::post('import', 'EmployeeController@import')->name('import');
+Route::post('import', 'EmployeeController@import')->name('import')->middleware('auth');
 
 
